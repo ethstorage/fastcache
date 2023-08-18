@@ -69,9 +69,9 @@ func (c *Cache) SaveToFileConcurrent(filePath string, concurrency int) error {
 	if err := os.RemoveAll(filePath); err != nil {
 		return fmt.Errorf("cannot remove old contents at %q: %s", filePath, err)
 	}
-	if err := os.Rename(tmpDir, filePath); err != nil {
-		return fmt.Errorf("cannot move temporary dir %q to %q: %s", tmpDir, filePath, err)
-	}
+	// if err := os.Rename(tmpDir, filePath); err != nil {
+	// 	return fmt.Errorf("cannot move temporary dir %q to %q: %s", tmpDir, filePath, err)
+	// }
 	tmpDir = ""
 	return nil
 }
